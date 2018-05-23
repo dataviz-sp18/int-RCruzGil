@@ -48,7 +48,7 @@ not_all_coins <- ggplot(no_unknown) +
 Row {.tabset .tabset-fade}
 -------------------------------------
    
-### Coins found in Capernaum {data-width=400}
+### Coins found in Capernaum 
 
 ```{r}
 
