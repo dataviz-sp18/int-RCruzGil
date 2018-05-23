@@ -1,0 +1,17 @@
+---
+title: "Explanation"
+author: "Rafael Cruz Gil"
+date: "22 May 2018"
+output:
+  html_document:
+  keep_md: true
+
+---
+
+# EXplanation of flex_dashboard
+
+This flex_dashboard illustrates the numismatic finds from five sites in Galilee during the Roman period. While my original intention was to also include a map that showed the sites and the location of the mints where the coins come from, I ran into trouble.I plan on submitting this map later, though. This is work from my thesis presented in a manner that is impossible to do so in paper format.
+
+As for the graphs, the first two present a comparison of the percentage of coins found at each site. The first one includes coins that could not be identified as belonging to a certain cultural group, while the second one eliminates those cases. The rest of the graphs, presented in different tabs, explore the finds per site, but not as a percentage, but instead showing the total number of cases.
+
+This visualisation, together with the ability to hover over the charts, should provide quick insights on the distribution of coins from these sites.

@@ -1,0 +1,130 @@
+---
+title: "Numismatic Findings from Five Sites in Roman Galilee"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+---
+
+Row 
+-------------------------------------
+    
+### Coins per Group (With those of Unkwnown Origin)
+    
+```{r}
+library(tidyverse)
+library(plotly)
+
+coins <- read.csv("coins.csv")
+
+all_coins <- ggplot(coins) +
+  geom_bar(aes(City, 
+               fill = Group), 
+           position = "fill") +
+  theme_bw() +
+   labs(x = "City",
+       y = "Percentage") 
+
+(all_coins <- ggplotly(all_coins))
+```
+   
+### Coins per Group (Without those of unknown origin)
+    
+```{r}
+
+no_unknown <- subset(coins, Group != "Unknown")
+
+not_all_coins <- ggplot(no_unknown) +
+  geom_bar(aes(City, 
+               fill = Group), 
+           position = "fill") +
+  theme_bw() +
+   labs(x = "City",
+       y = "Percentage")
+
+(not_all_coins <- ggplotly(not_all_coins))
+
+```   
+
+Row {.tabset .tabset-fade}
+-------------------------------------
+   
+### Coins found in Capernaum {data-width=400}
+
+```{r}
+
+capernaum <- subset(coins, City == "Capernaum")
+
+coins_capernaum <- ggplot(capernaum) +
+  geom_bar(aes(City,
+               fill = Group)) +
+  theme_bw() +
+   labs( x = "City",
+       y = "N")
+
+(coins_capernaum <- ggplotly(coins_capernaum))
+```   
+ 
+### Coins found in Gamla
+    
+```{r}
+gamla <- subset(coins, City == "Gamla")
+
+coins_gamla <- ggplot(gamla) +
+  geom_bar(aes(City,
+               fill = Group)) +
+  theme_bw() +
+   labs( x = "City",
+       y = "N")
+
+(coins_gamla <- ggplotly(coins_gamla))
+```
+
+### Coins found in Hippos
+    
+```{r}
+
+hippos <- subset(coins, City == "Hippos")
+
+coins_hippos <- ggplot(hippos) +
+  geom_bar(aes(City,
+               fill = Group)) +
+  theme_bw() +
+   labs( x = "City",
+       y = "N")
+
+(coins_hippos <- ggplotly(coins_hippos))
+
+```
+
+### Coins found in Magdala
+    
+```{r}
+
+magdala <- subset(coins, City == "Magdala")
+
+coins_magdala <- ggplot(magdala) +
+  geom_bar(aes(City,
+               fill = Group)) +
+  theme_bw() +
+   labs( x = "City",
+       y = "N")
+
+(coins_magdala <- ggplotly(coins_magdala))
+
+```
+
+### Coins found in Tiberias
+    
+```{r}
+
+tiberias <- subset(coins, City == "Tiberias")
+
+coins_tiberias <- ggplot(tiberias) +
+  geom_bar(aes(City,
+               fill = Group)) +
+  theme_bw() +
+   labs( x = "City",
+       y = "N")
+
+(coins_tiberias <- ggplotly(coins_tiberias))
+```
